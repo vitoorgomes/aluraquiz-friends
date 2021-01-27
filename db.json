@@ -1,28 +1,54 @@
 {
-  "bg": "https://cdn.falauniversidades.com.br/wp-content/uploads/2019/08/friends-capa.jpg",
-  "title": "Quiz CSS da Alura",
-  "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
+  "bg": "https://wallpaperaccess.com/full/2490425.jpg",
+  "title": "Quiz Alura Friends",
+  "description": "Teste seus conhecimentos com algumas questões de Friends",
   "questions": [
     {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-      "title": "Como fazer um seletor por id via CSS?",
-      "description": "Essa é pra aquecer",
-      "answer": 2,
+      "image": "https://video-images.vice.com/_uncategorized/1563295620465-Screen-Shot-2019-07-16-at-124640-PM.png?resize=1005:*",
+      "title": "Qual é o nome dos quadros da Phoebe?",
+      "description": "Ótimo episódio por sinal",
+      "answer": "0",
       "alternatives": [
-        ".elemento",
-        "*elemento",
-        "#elemento",
-        "%elemento"
+        "Gladys e Glannis",
+        "Pheebs e Glades",
+        "Gladys e Carly",
+        "Pheebo e Pheebs"
       ]
     },
     {
-      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-      "title": "Como fazer um background gradiente com css?",
-      "description": "Faz tempo em haha",
-      "answer": 0,
+      "image": "http://2.bp.blogspot.com/_uwpNgKFbC-o/TIKysFataHI/AAAAAAAAAuc/zBQXoZ1V3uU/s1600/03.jpg",
+      "title": "Qual o nome completo do Chandler?",
+      "description": "Inclusive melhor personagem",
+      "answer": "3",
       "alternatives": [
-         "background: linear-gradient(#e66465, #9198e5);",
-         "background: gradient(#e66465, #9198e5);"
+         "Chandler Marcel Bing",
+         "Chandler Cheese Bing",
+         "Chandler Murial Bing",
+         "Chandler Muriel Bing"
+      ]
+    },
+    {
+      "image": "https://i0.wp.com/scenetherapy.com/wp-content/uploads/2019/01/Monica%E2%80%99s-Apartment-from-Friends-living-room-early-series.jpg?resize=640%2C431&ssl=1",
+      "title": "Quem nunca morou no apartamento da Monica?",
+      "description": "Saudades dessa sala",
+      "answer": "2",
+      "alternatives": [
+         "Apenas Chandler",
+         "Apenas Ross",
+         "Todos os personagens",
+         "Apenas Joey"
+      ]
+    },
+    {
+      "image": "https://spoiler.bolavip.com/__export/1577199613806/sites/bolavip/img/2019/12/24/friends_episodios_navidenxos_el_papa_de_phoebe_crop1577199613335.jpg_2136541539.jpg",
+      "title": "Qual é o número de identificação do táxi da Phoebe?",
+      "description": "Confesso é que difícil lembrar dessa",
+      "answer": "1",
+      "alternatives": [
+         "2X92",
+         "2X85",
+         "3X85",
+         "3X92"
       ]
     }
   ],
@@ -34,7 +60,7 @@
       "primary": "#9A80B9",
       "secondary": "#EEC728",
       "mainBg": "#171B35",
-      "contrastText": "#FFFFFF",
+      "contrastText": "#ffe993",
       "wrong": "#FF5722",
       "success": "#4CAF50"
     },

@@ -49,11 +49,30 @@ const Content = styled.div`
     padding: 0;
   }
 `
+const Topic = styled.a`
+  outline: 0;
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.contrastText};
+  background-color: ${({ theme }) => `${theme.colors.secondary}90`};
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border-radius: ${({ theme }) => theme.borderRadius};
+  transition: 0.3s;
+  display: block;
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
+  }
+`
+
 const FullWidgetWrapper = ({ children, ...rest }): JSX.Element => {
   return <Widget {...rest}>{children}</Widget>
 }
 
 FullWidgetWrapper.Header = Header
 FullWidgetWrapper.Content = Content
+FullWidgetWrapper.Topic = Topic
 
 export default FullWidgetWrapper
