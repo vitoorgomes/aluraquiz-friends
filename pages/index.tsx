@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
@@ -10,6 +10,7 @@ import QuizBackground from '../src/components/QuizBackground'
 import Footer from '../src/components/Footer'
 import GitHubCorner from '../src/components/GitHubCorner'
 import QuizLogo from '../src/components/QuizLogo'
+import { IThemeProps } from './_app'
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -22,42 +23,87 @@ export const QuizContainer = styled.div`
   }
 `
 
+const Input = styled.input`
+  background: inherit;
+  color: white;
+  border-width: 2px;
+  border-color: ${({ theme }: IThemeProps) => theme.colors.secondary};
+  border-radius: 3.5px;
+  font-weight: bold;
+  font-size: 14px;
+  height: 38px;
+  width: -webkit-fill-available;
+  font-family: Lato;
+  font-style: normal;
+  line-height: 24px;
+
+  ::placeholder {
+    color: ${({ theme }: IThemeProps) => theme.colors.secondary};
+    opacity: 1;
+    font-family: Lato;
+    font-style: normal;
+    line-height: 24px;
+  }
+`
+
+const Button = styled.button`
+  margin-top: 25px;
+  height: 38px;
+  width: -webkit-fill-available;
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+
+  background-color: ${({ theme }: IThemeProps) => theme.colors.secondary};
+
+  &:disabled {
+    color: #fff;
+    background: #b6a7c7;
+
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+`
+
 const Home: React.FC = () => {
   const router = useRouter()
-  const [name, setName] = React.useState('')
+  const [name, setName] = useState('')
 
   return (
     <QuizBackground backgroundImage={db.bg}>
       <Head>
-        <title>AluraQuiz - Modelo Base</title>
+        <title>AluraQuiz - Friends</title>
       </Head>
       <QuizContainer>
         <QuizLogo />
         <Widget>
           <Widget.Header>
-            <h1>The legend of zelda</h1>
+            <h1 style={{ fontWeight: 'bolder' }}>Um quiz de Friends</h1>
           </Widget.Header>
           <Widget.Content>
             <form
-              onSubmit={function (infosDoEvento) {
-                infosDoEvento.preventDefault()
+              onSubmit={(e: React.FormEvent) => {
+                e.preventDefault()
                 router.push(`/quiz?name=${name}`)
-                console.log('Fazendo uma submissão por meio do react')
               }}
+              style={{ textAlignLast: 'center' }}
             >
-              <input
-                onChange={function (infosDoEvento) {
-                  console.log(infosDoEvento.target.value)
-                  // State
-                  // name = infosDoEvento.target.value;
-                  setName(infosDoEvento.target.value)
-                }}
-                placeholder="Diz ai seu nome"
-              />
-              <button type="submit" disabled={name.length === 0}>
-                Jogar
-                {name}
-              </button>
+              <div>
+                <Input
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                    setName(e.target.value)
+                  }}
+                  placeholder="Me conta seu nome :)"
+                />
+              </div>
+              <Button type="submit" disabled={name.length === 0}>
+                {`JOGAR ${name}`}
+              </Button>
             </form>
           </Widget.Content>
         </Widget>

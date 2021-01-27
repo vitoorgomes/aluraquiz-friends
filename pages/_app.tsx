@@ -4,7 +4,7 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import Head from 'next/head'
 import db from '../db.json'
 
-interface GlobalStyleProps {
+export interface IThemeProps {
   theme: {
     colors: {
       primary: string
@@ -18,7 +18,7 @@ interface GlobalStyleProps {
   }
 }
 
-const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
+const GlobalStyle = createGlobalStyle<IThemeProps>`
   * {
     box-sizing: border-box;
   }

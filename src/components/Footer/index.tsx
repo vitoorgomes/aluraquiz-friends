@@ -30,7 +30,6 @@ interface Props {
 
 const Footer: React.FC<Props> = props => {
   return (
-    // eslint-disable-next-line react/jsx-props-no-spreading
     <FooterWrapper {...props}>
       <a href="https://www.alura.com.br/">
         <img

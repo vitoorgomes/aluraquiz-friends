@@ -1,11 +1,11 @@
-import { CSSProperties } from 'react'
 import styled from 'styled-components'
+import { IThemeProps } from '../../../pages/_app'
 
-const Widget = styled.div`
+const Widget = styled.div<IThemeProps>`
   margin-top: 24px;
   margin-bottom: 24px;
-  border: 1px solid ${({ theme }) => theme.colors.primary};
-  background-color: ${({ theme }) => theme.colors.mainBg};
+  border: 1px solid ${({ theme }) => theme.colors.secondary};
+  background-color: ${({ theme }) => theme.colors.primary};
   border-radius: 4px;
   overflow: hidden;
 
@@ -29,7 +29,7 @@ const Header = styled.header`
   justify-content: flex-start;
   align-items: center;
   padding: 18px 32px;
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.secondary};
 
   * {
     margin: 0;
