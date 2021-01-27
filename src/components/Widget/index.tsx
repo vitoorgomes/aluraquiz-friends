@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import { CSSProperties } from 'react'
+import styled from 'styled-components'
 
 const Widget = styled.div`
   margin-top: 24px;
@@ -8,7 +9,9 @@ const Widget = styled.div`
   border-radius: 4px;
   overflow: hidden;
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     font-size: 16px;
     font-weight: 700;
     line-height: 1;
@@ -19,21 +22,21 @@ const Widget = styled.div`
     font-weight: 400;
     line-height: 1;
   }
-`;
+`
 
-Widget.Header = styled.header`
+const Header = styled.header`
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding: 18px 32px;
   background-color: ${({ theme }) => theme.colors.primary};
-  
+
   * {
     margin: 0;
   }
-`;
+`
 
-Widget.Content = styled.div`
+const Content = styled.div`
   padding: 24px 32px 32px 32px;
   & > *:first-child {
     margin-top: 0;
@@ -45,6 +48,12 @@ Widget.Content = styled.div`
     list-style: none;
     padding: 0;
   }
-`;
+`
+const FullWidgetWrapper = ({ children, ...rest }): JSX.Element => {
+  return <Widget {...rest}>{children}</Widget>
+}
 
-export default Widget;
+FullWidgetWrapper.Header = Header
+FullWidgetWrapper.Content = Content
+
+export default FullWidgetWrapper
